@@ -4,28 +4,21 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.border.LineBorder;
 import java.awt.event.*;
 import java.awt.*;
-import java.net.MalformedURLException;
+
 
 public class weather{
     
-    public static void main(String[] args) throws MalformedURLException {
+    public static void main(String[] args) {
 
         //Main body Frame
         JFrame fr = new JFrame("Weather App");
-        Image icon = Toolkit.getDefaultToolkit().getImage("assets/icon.png");  
+        Image icon = Toolkit.getDefaultToolkit().getImage("assets/icon.png");
         fr.setIconImage(icon);  
         fr.setLayout(null);
-        fr.setSize(800,600);
+        fr.setSize(800,400);
         fr.getContentPane().setBackground(new Color(162, 224, 246));
-       
-        
-        JLabel nlabel = new JLabel("Rounded Corners");
-        nlabel.setHorizontalAlignment(JLabel.CENTER);
-        LineBorder line = new LineBorder(Color.black, 2, true);
-        nlabel.setBorder(line);
 
         //Label for welcome text
         JLabel headingLabel = new JLabel();
@@ -33,20 +26,20 @@ public class weather{
         headingLabel.setBounds(200, 55, 500,30);
 
         JLabel placeLabel = new JLabel();
-        placeLabel.setText("<html><H2>Enter city name: </H2></html>");
-        placeLabel.setBounds(100, 195, 500,30);
+        placeLabel.setText("<html><H2>Enter city/country name: </H2></html>");
+        placeLabel.setBounds(278, 145, 500,30);
 
         //Label for showing selecting element from dropdown
         JLabel label = new JLabel();
-        label.setBounds(380, 250, 190, 30); 
+        label.setBounds(200, 250, 190, 30); 
 
         JTextField textField = new JTextField();
-        textField.setBounds(290,200, 200,30);       
+        textField.setBounds(280,200, 200,30);       
     
         //Button
         Icon buttonIcon = new ImageIcon("assets/button.png");
         JButton b=new JButton(buttonIcon);
-        b.setBounds(320,350,102,48); 
+        b.setBounds(320,250,102,48); 
         b.setBorderPainted(false);
         b.setFocusPainted(false);
         b.addActionListener(new ActionListener() {  
@@ -55,13 +48,9 @@ public class weather{
             } 
         }); 
 
-        
-
-        
-        
+       
         fr.add(b);
-        fr.add(nlabel);
-        fr.add(label);
+        fr.add(label); 
         fr.add(headingLabel);
         fr.add(placeLabel);
         fr.add(textField);
